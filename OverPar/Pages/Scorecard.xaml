@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OverPar.Pages.Scorecard"
+             xmlns:vm="clr-namespace:OverPar.ViewModels"
+             Title="Scorecard">
+    <ContentPage.BindingContext>
+        <vm:ScorecardViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20">
+        <Label Text="Take a Picture" FontSize="Large" Margin="0,20,0,0" />
+        <Button Text="Take Picture" Command="{Binding TakePictureCommand}" Margin="0,20,0,0"
+                IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}" />
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Margin="0,20,0,0" />
+    </StackLayout>
+</ContentPage>
