@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using OverPar.Pages;
 using OverPar.ViewModels;
@@ -28,7 +29,8 @@ public static class MauiProgram
 		//builder.Configuration.AddConfiguration(config);
 		builder.Configuration.AddJsonFile("OverPar.appsettings.json");
 		builder.Services.AddOptions();
-		builder.Services.Configure<FormReaderSettings>(builder.Configuration.GetRequiredSection("ScorecardReader"));
+		var formReaderSettings = builder.Configuration.GetSection("ScorecardReader").Get<FormReaderSettings>();
+		builder.Services.Configure<FormReaderSettings>((IConfiguration)formReaderSettings);
 
 		builder.Services.AddSingleton<MainViewModel>();
 		builder.Services.AddTransient<ScorecardViewModel>();
