@@ -20,17 +20,18 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
-		//var a = Assembly.GetExecutingAssembly();
-		//using var stream = a.GetManifestResourceStream("OverPar.appsettings.json");
-		//var config = new ConfigurationBuilder()
-		//	.AddJsonStream(stream)
-		//	.Build();
+		var a = Assembly.GetExecutingAssembly();
+		using var stream = a.GetManifestResourceStream("OverPar.appsettings.json");
+		var config = new ConfigurationBuilder()
+			.AddJsonStream(stream)
+			.Build();
 
-		//builder.Configuration.AddConfiguration(config);
-		builder.Configuration.AddJsonFile("OverPar.appsettings.json");
-		builder.Services.AddOptions();
-		var formReaderSettings = builder.Configuration.GetSection("ScorecardReader").Get<FormReaderSettings>();
-		builder.Services.Configure<FormReaderSettings>((IConfiguration)formReaderSettings);
+		builder.Configuration.AddConfiguration(config);
+		//builder.Configuration.AddJsonFile("OverPar.appsettings.json");
+		//builder.Services.AddOptions();
+		//var config = builder.Configuration.bui
+		//var formReaderSettings = builder.Configuration.GetRequiredSection("ScorecardReader");//.Get<FormReaderSettings>();
+		//builder.Services.Configure<FormReaderSettings>(formReaderSettings);
 
 		builder.Services.AddSingleton<MainViewModel>();
 		builder.Services.AddTransient<ScorecardViewModel>();

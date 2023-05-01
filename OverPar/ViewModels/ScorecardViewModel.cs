@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using OverPar.Domain.Settings;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -11,13 +14,15 @@ namespace OverPar.ViewModels
 {
     public class ScorecardViewModel : INotifyPropertyChanged
     {
+        private readonly FormReaderSettings _formReaderSettings;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ICommand TakePictureCommand { get; }
 
-        public ScorecardViewModel()
+        public ScorecardViewModel(IConfiguration config)
         {
+            _formReaderSettings = config.GetRequiredSection("ScorecardReader").Get<FormReaderSettings>();
             TakePictureCommand = new Command(async () => await TakePictureAsync());
         }
 
