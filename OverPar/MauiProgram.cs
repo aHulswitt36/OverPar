@@ -27,13 +27,18 @@ public static class MauiProgram
 		//	.Build();
 
 		//builder.Configuration.AddConfiguration(config);
-		builder.Configuration.AddJsonFile("OverPar.appsettings.json");
-		builder.Services.AddOptions();
-		var formReaderSettings = builder.Configuration.GetSection("ScorecardReader").Get<FormReaderSettings>();
-		builder.Services.Configure<FormReaderSettings>((IConfiguration)formReaderSettings);
+		//builder.Configuration.AddJsonFile("OverPar.appsettings.json");
+		//builder.Services.AddOptions();
+		//var formReaderSettings = builder.Configuration.GetSection("ScorecardReader").Get<FormReaderSettings>();
+		//builder.Services.Configure<FormReaderSettings>((IConfiguration)formReaderSettings);
 
 		builder.Services.AddSingleton<MainViewModel>();
 		builder.Services.AddTransient<ScorecardViewModel>();
+
+
+
+
+
 
 		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddTransient<Scorecard>();

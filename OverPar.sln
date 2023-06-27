@@ -5,7 +5,13 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverPar", "OverPar\OverPar.csproj", "{8EDE4B24-63BB-4788-B1A8-FA5BCD9B0A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverPar.Domain", "OverPar.Domain\OverPar.Domain.csproj", "{52C35915-04C2-45E2-BDA0-AB576F5D9BCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverPar.Domain", "OverPar.Domain\OverPar.Domain.csproj", "{52C35915-04C2-45E2-BDA0-AB576F5D9BCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverPar.API", "OverPar.API\OverPar.API.csproj", "{6771940C-3208-4DEA-8912-7C792D43D805}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A5ADF902-CF10-4848-8E05-E0FEE5ADE1C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{A83CE00E-E920-4CC8-8BBA-75CD24348185}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +29,16 @@ Global
 		{52C35915-04C2-45E2-BDA0-AB576F5D9BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52C35915-04C2-45E2-BDA0-AB576F5D9BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52C35915-04C2-45E2-BDA0-AB576F5D9BCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6771940C-3208-4DEA-8912-7C792D43D805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6771940C-3208-4DEA-8912-7C792D43D805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6771940C-3208-4DEA-8912-7C792D43D805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6771940C-3208-4DEA-8912-7C792D43D805}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EDE4B24-63BB-4788-B1A8-FA5BCD9B0A29} = {A5ADF902-CF10-4848-8E05-E0FEE5ADE1C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}

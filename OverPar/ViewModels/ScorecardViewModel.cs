@@ -15,6 +15,7 @@ namespace OverPar.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ICommand TakePictureCommand { get; }
+        private List<string> test;
 
         public ScorecardViewModel()
         {
