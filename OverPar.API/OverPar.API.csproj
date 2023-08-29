@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\OverPar.Domain\OverPar.Domain.csproj" />
   </ItemGroup>
 
 </Project>

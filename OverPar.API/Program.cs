@@ -1,6 +1,10 @@
+using OverPar.Domain.Settings;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var formReaderSettings = builder.Configuration.GetSection("ScorecardReader").Get<FormReaderSettings>();
+builder.Services.AddSingleton(formReaderSettings);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
