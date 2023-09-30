@@ -4,11 +4,22 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:OverPar"
+    xmlns:pages="clr-namespace:OverPar.Pages"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
+    <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
+    <TabBar>
+        <Tab
+            Title="My Scores">
+            <ShellContent ContentTemplate="{DataTemplate pages:Details}" />
+        </Tab>
+        <Tab
+            Title="+ New Scorecard">
+            <ShellContent ContentTemplate="{DataTemplate pages:Scorecard}"/>
+        </Tab>
+    </TabBar>
 
 </Shell>

@@ -5,6 +5,7 @@ using OverPar.Pages;
 using OverPar.ViewModels;
 using System.Reflection;
 using OverPar.Domain.Settings;
+using Microsoft.Extensions.Azure;
 
 namespace OverPar;
 
@@ -34,6 +35,7 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<MainViewModel>();
 		builder.Services.AddTransient<ScorecardViewModel>();
+		builder.Services.AddTransient<DetailsViewModel>();
 
 
 
@@ -42,6 +44,7 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddTransient<Scorecard>();
+		builder.Services.AddTransient<Details>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
