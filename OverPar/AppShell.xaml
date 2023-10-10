@@ -7,17 +7,57 @@
     xmlns:pages="clr-namespace:OverPar.Pages"
     Shell.FlyoutBehavior="Disabled">
 
+    <Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.TabBarBackgroundColor"
+                    Value="LawnGreen" />
+            <Setter Property="Shell.TabBarForegroundColor"
+                    Value="Black" />
+            <Setter Property="Shell.TabBarTitleColor"
+                    Value="Black" />
+            <Setter Property="Shell.TabBarDisabledColor"
+                    Value="#B4FFFFFF" />
+            <Setter Property="Shell.TabBarUnselectedColor"
+                    Value="Black" />
+        </Style>
+        <Style TargetType="ShellItem"
+               BasedOn="{StaticResource BaseStyle}" />
+        <Style x:Key="DomesticShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#039BE6" />
+        </Style>
+        <Style x:Key="Home"
+               TargetType="Element"               
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="AbsoluteLayout.Margin"
+                    Value="50, 0, 0, 0"/>
+        </Style>
+        <Style x:Key="Me"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+        </Style>
+    </Shell.Resources>
+
     <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />-->
     <TabBar>
         <Tab
-            Title="My Scores">
-            <ShellContent ContentTemplate="{DataTemplate pages:Details}" />
+            Route="home"
+            Title="Home"
+            Style="{StaticResource Home}"
+            Icon="home.png">
+            <ShellContent  ContentTemplate="{DataTemplate pages:Details}" />
         </Tab>
         <Tab
-            Title="+ New Scorecard">
+            Route="me"
+            Title="Profile"
+            Style="{StaticResource Me}"
+            Icon="user.png">
             <ShellContent ContentTemplate="{DataTemplate pages:Scorecard}"/>
         </Tab>
     </TabBar>
